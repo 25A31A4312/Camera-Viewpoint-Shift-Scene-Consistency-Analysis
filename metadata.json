@@ -1,0 +1,8 @@
+{
+  "name": "Camera Viewpoint Shift & Scene Consistency Analysis",
+  "description": "Industrial-grade Computer Vision system for detecting unexpected camera translations, rotations, zoom changes, and scene inconsistencies in fixed CCTV monitoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
