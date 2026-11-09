@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0b0f19;
+    color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar for data tables and logs */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27354f;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b4d6e;
+  }
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Hide navigation, action bars, buttons, and footers when printing */
+  nav,
+  footer,
+  .print\:hidden,
+  button,
+  [role="button"] {
+    display: none !important;
+  }
+
+  /* Ensure card backgrounds and text are ink-saving and high-contrast */
+  .rounded-lg,
+  .border,
+  div[class*="bg-slate-900"],
+  div[class*="bg-slate-950"] {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+  }
+
+  h1, h2, h3, h4, .text-white {
+    color: #0f172a !important;
+  }
+
+  p, span, .text-slate-300, .text-slate-400, .text-slate-500 {
+    color: #334155 !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+  }
+
+  td {
+    border-bottom: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+  }
+
+  @page {
+    margin: 1.5cm;
+    size: auto;
+  }
+}
